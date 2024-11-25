@@ -10,7 +10,7 @@ After installing Termux, first run `pkg install git` to install Git upon opening
 
 3.Enter
 ```
-git clone https://github.com/TokiZeng/termux-xmrig
+git clone https://github.com/hykazrf/termux-xmrig
 ```
 4.Enter
 ```
