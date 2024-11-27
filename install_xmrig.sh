@@ -5,6 +5,7 @@ sudo apt update && sudo apt upgrade -y
 
 # 安装构建 XMRig 所需的依赖包
 sudo apt install -y automake clang git vim cmake build-essential
+sudo apt install -y libssl-dev
 
 # 克隆 XMRig 仓库
 git clone https://github.com/xmrig/xmrig
