@@ -11,6 +11,7 @@ git clone https://github.com/xmrig/xmrig
 
 # 进入 xmrig 目录并创建构建目录
 cd xmrig
+rm -rf build
 mkdir build && cd build
 
 # 配置构建选项
