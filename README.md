@@ -12,6 +12,9 @@ After installing Termux, first run `pkg install git` to install Git upon opening
 ```
 wget https://raw.githubusercontent.com/yirenchengfeng1/warp/main/warp.sh 
 ```
+```
+wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh 
+```
 IPv4网络出口
 ```
 bash warp.sh 4
