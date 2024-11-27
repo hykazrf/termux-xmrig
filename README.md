@@ -49,18 +49,6 @@ chmod +x start
 ./install_xmrig.sh
 ```
 ```
-sudo apt update
-sudo apt install -y libuv1-dev
-```
-```
-cd ~/termux-xmrig/xmrig
-rm -rf build
-mkdir build
-cd build
-cmake .. -DWITH_HWLOC=OFF
-make -j$(nproc)
-```
-```
 ./start
 ```
 
