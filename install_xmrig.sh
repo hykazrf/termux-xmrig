@@ -20,13 +20,15 @@ cmake .. -DWITH_HWLOC=OFF
 # 编译 XMRig
 make -j$(nproc)
 
-# 设置 start 脚本执行权限
-chmod +x start
+
 
 # 可选：将 start 脚本复制到主目录并删除源文件
 cd $HOME
 cp termux-xmrig/start ~
 rm termux-xmrig/start
+
+# 设置 start 脚本执行权限
+chmod +x start
 
 # 完成并准备开始挖矿
 echo "XMRig 编译完成，可以开始挖矿！"
