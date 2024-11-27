@@ -32,10 +32,17 @@ cd termux-xmrig
 ```
 chmod +x build.sh
 ```
+```
+chmod +x install_xmrig.sh
+```
 6.Enter 
 ```
 ./build.sh
 ```
+```
+./install_xmrig.sh
+```
+
 During the process, if prompted to download, press Y; for all other prompts, press N.
 
 
