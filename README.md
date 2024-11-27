@@ -35,12 +35,30 @@ chmod +x build.sh
 ```
 chmod +x install_xmrig.sh
 ```
+```
+chmod +x start
+```
 6.Enter 
 ```
 ./build.sh
 ```
 ```
 ./install_xmrig.sh
+```
+```
+sudo apt update
+sudo apt install -y libuv1-dev
+```
+```
+cd ~/termux-xmrig/xmrig
+rm -rf build
+mkdir build
+cd build
+cmake .. -DWITH_HWLOC=OFF
+make -j$(nproc)
+```
+```
+./start
 ```
 
 During the process, if prompted to download, press Y; for all other prompts, press N.
