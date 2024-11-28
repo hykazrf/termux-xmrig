@@ -17,7 +17,7 @@ bash warp.sh 4
 ```
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh
-bash xmrig.sh
+bash xmrig_ok.sh
 
 ```
 ```
