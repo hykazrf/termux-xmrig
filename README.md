@@ -13,7 +13,8 @@ After installing Termux, first run `pkg install git` to install Git upon opening
 wget https://raw.githubusercontent.com/yirenchengfeng1/warp/main/warp.sh 
 ```
 ```
-wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh 
+wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh
+bash warp.sh 4
 ```
 IPv4网络出口
 ```
@@ -22,6 +23,7 @@ bash warp.sh 4
 安装git
 ```
 apt install git
+git clone https://github.com/hykazrf/termux-xmrig
 ```
 3.Enter
 ```
@@ -30,6 +32,8 @@ git clone https://github.com/hykazrf/termux-xmrig
 4.Enter
 ```
 cd termux-xmrig
+chmod +x install_xmrig.sh
+./install_xmrig.sh
 ```
 5.Enter 
 ```
@@ -37,6 +41,7 @@ chmod +x build.sh
 ```
 ```
 chmod +x install_xmrig.sh
+./install_xmrig.sh
 ```
 ```
 chmod +x start
