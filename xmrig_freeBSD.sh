@@ -1,9 +1,8 @@
 #!/bin/sh
 
 # 更新系统和安装依赖
-pky install -y sudo
-sudo pkg update && sudo pkg upgrade -y
-sudo pkg install -y automake clang git vim cmake gcc gmake libssl libuv screen
+pkg update && pkg upgrade -y
+pkg install -y automake opencl-clang-llvm15 git vim cmake gcc gmake openssl libuv screen
 
 # 克隆 XMRig 仓库
 git clone https://github.com/xmrig/xmrig
