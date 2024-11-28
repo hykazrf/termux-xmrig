@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # 更新系统和安装依赖
+pky install -y sudo
 sudo pkg update && sudo pkg upgrade -y
 sudo pkg install -y automake clang git vim cmake gcc gmake libssl libuv screen
 
