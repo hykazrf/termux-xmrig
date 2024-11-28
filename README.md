@@ -29,6 +29,11 @@ wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh && 
 
 ```
 ```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_freeBSD.sh && xmrig_freeBSD.sh
+
+
+```
+```
 apt install git
 git clone https://github.com/hykazrf/termux-xmrig
 cd termux-xmrig
