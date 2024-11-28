@@ -35,7 +35,10 @@ EOF
 chmod +x start
 
 # 后台运行挖矿
-nohup ./start > xmrig.log 2>&1 &
+sudo apt install screen  # 首次需要安装
+screen -S my_session_name
+./start
+
 
 # 完成通知
 echo "XMRig 编译完成并已在后台运行！日志保存在 xmrig.log"
