@@ -16,6 +16,11 @@ bash warp.sh 4
 
 ```
 ```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/setup_warp.sh
+bash setup_warp.sh
+
+```
+```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh
 bash xmrig_ok.sh
 
