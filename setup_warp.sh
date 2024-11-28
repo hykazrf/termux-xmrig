@@ -1,19 +1,30 @@
 #!/bin/bash
 
-# 更新包管理器并安装必要工具
+# 更新系统并安装必要的工具
 echo "Updating system and installing dependencies..."
 sudo apt update
-sudo apt install -y wget
+sudo apt install -y wget curl
+
+# 检查网络连接，确保可以访问外部网络
+echo "Checking network connectivity..."
+ping -c 4 8.8.8.8 || { echo "Network is unreachable. Please check your internet connection."; exit 1; }
+
+# 设置 DNS (Google DNS)
+echo "Setting DNS to Google DNS..."
+sudo tee /etc/resolv.conf > /dev/null <<EOL
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOL
 
 # 下载并安装 Cloudflare Warp 客户端 (cloudflared)
 echo "Downloading and installing cloudflared..."
-sudo wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -O cloudflared-linux-amd64.deb || { echo "Failed to download cloudflared. Exiting."; exit 1; }
 sudo dpkg -i cloudflared-linux-amd64.deb
 sudo apt --fix-broken install  # 修复依赖问题
 
 # 验证 cloudflared 安装是否成功
 echo "Verifying cloudflared installation..."
-cloudflared --version
+cloudflared --version || { echo "cloudflared installation failed. Exiting."; exit 1; }
 
 # 配置 Cloudflare Warp (请替换 YOUR_HOSTNAME 为你的主机名)
 echo "Starting cloudflared tunnel..."
@@ -44,8 +55,8 @@ sudo systemctl start cloudflared
 
 # 检查 Warp 是否工作正常
 echo "Checking IPv4 and IPv6 addresses..."
-curl -4 https://httpbin.org/ip
-curl -6 ifconfig.co
+curl -4 https://httpbin.org/ip || { echo "Failed to fetch IPv4 address. Exiting."; exit 1; }
+curl -6 ifconfig.co || { echo "Failed to fetch IPv6 address. Exiting."; exit 1; }
 
 # 提示用户完成设置
 echo "Warp setup completed. Your VPS is now using Cloudflare Warp to route IPv4 traffic via IPv6."
