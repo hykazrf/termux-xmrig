@@ -16,7 +16,7 @@ nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOL
 
-# 下载并安装 Cloudflare Warp 客户端 (cloudflared)
+# 手动下载并安装 cloudflared
 echo "Downloading and installing cloudflared..."
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -O cloudflared-linux-amd64.deb || { echo "Failed to download cloudflared. Exiting."; exit 1; }
 sudo dpkg -i cloudflared-linux-amd64.deb
@@ -26,7 +26,7 @@ sudo apt --fix-broken install  # 修复依赖问题
 echo "Verifying cloudflared installation..."
 cloudflared --version || { echo "cloudflared installation failed. Exiting."; exit 1; }
 
-# 配置 Cloudflare Warp (请替换 YOUR_HOSTNAME 为你的主机名)
+# 配置 Cloudflare Warp 隧道
 echo "Starting cloudflared tunnel..."
 cloudflared --hostname YOUR_HOSTNAME tunnel --url http://localhost:8080 &
 
@@ -53,7 +53,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable cloudflared
 sudo systemctl start cloudflared
 
-# 检查 Warp 是否工作正常
+# 检查 IPv4 和 IPv6 地址
 echo "Checking IPv4 and IPv6 addresses..."
 curl -4 https://httpbin.org/ip || { echo "Failed to fetch IPv4 address. Exiting."; exit 1; }
 curl -6 ifconfig.co || { echo "Failed to fetch IPv6 address. Exiting."; exit 1; }
