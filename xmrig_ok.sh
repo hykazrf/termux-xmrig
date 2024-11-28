@@ -28,7 +28,7 @@ WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
 
 # 创建并启动一个新的 screen 会话，执行挖矿程序
 screen -dmS xmrig_mining ./xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider.unmineable.com:443 \
--u DOGE:DFZf68zsixcBnU7d2xWX3bmfSFEBenviz1.${WORKER_NAME} -p x -t 2
+-u DOGE:DFZf68zsixcBnU7d2xWX3bmfSFEBenviz1.${WORKER_NAME}#6sma-emfh -p x -t 2
 
 # 输出通知
 echo "XMRig 挖矿已在后台运行，并且在 screen 会话中运行！"
