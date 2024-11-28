@@ -22,7 +22,7 @@ cd ~
 # 创建快捷启动脚本
 cat <<EOF > start
 #!/bin/bash
-./xmrig/xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider.unmineable.com:443 -u DOGE:DFZf68zsixcBnU7d2xWX3bmfSFEBenviz1.unmineable_worker_Prosperous#6sma-emfh -p x -t 2
+./xmrig/xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider.unmineable.com:443 -u DOGE:DFZf68zsixcBnU7d2xWX3bmfSFEBenviz1.unmineable_worker_Earthy#6sma-emfh -p x -t 2
 EOF
 
 # 设置执行权限
