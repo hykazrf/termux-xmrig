@@ -11,8 +11,7 @@ After installing Termux, first run `pkg install git` to install Git upon opening
 解锁脚本
 
 ```
-wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh
-bash warp.sh 4
+wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh && bash warp.sh 4
 
 ```
 ```
@@ -21,8 +20,8 @@ bash setup_warp.sh
 
 ```
 ```
-wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh
-bash xmrig_ok.sh
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh && bash xmrig_ok.sh
+
 
 ```
 ```
