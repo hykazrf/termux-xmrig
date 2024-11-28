@@ -16,7 +16,7 @@ cmake .
 make
 
 cp /etc/resolv.conf chroot/etc # networking
-./mrchroot chroot /usr/local/bin/bash
+./mrchroot chroot /usr/local/bin/sh
 
 # 已经进入了chroot
 
