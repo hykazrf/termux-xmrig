@@ -15,6 +15,9 @@ wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh
 bash warp.sh 4
 ```
 ```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig.sh
+```
+```
 apt install git
 git clone https://github.com/hykazrf/termux-xmrig
 cd termux-xmrig
