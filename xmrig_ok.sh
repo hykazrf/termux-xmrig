@@ -2,7 +2,7 @@
 
 # 更新系统和安装依赖
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y automake clang git vim cmake build-essential libssl-dev libuv1-dev
+sudo apt install -y automake clang git vim cmake build-essential libssl-dev libuv1-dev screen
 
 # 克隆 XMRig 仓库
 git clone https://github.com/xmrig/xmrig
@@ -26,19 +26,20 @@ cat <<'EOF' > start
 # 生成随机矿工名
 WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
 
-# 启动 XMRig
-./xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider.unmineable.com:443 \
+# 创建并启动一个新的 screen 会话，执行挖矿程序
+screen -dmS xmrig_mining ./xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider.unmineable.com:443 \
 -u DOGE:DFZf68zsixcBnU7d2xWX3bmfSFEBenviz1.${WORKER_NAME} -p x -t 2
+
+# 输出通知
+echo "XMRig 挖矿已在后台运行，并且在 screen 会话中运行！"
+echo "你可以通过 'screen -r xmrig_mining' 来查看挖矿日志。"
 EOF
 
 # 设置执行权限
 chmod +x start
 
-# 后台运行挖矿
-sudo apt install screen  # 首次需要安装
-screen -S my_session_name
+# 启动脚本
 ./start
 
-
 # 完成通知
-echo "XMRig 编译完成并已在后台运行！日志保存在 xmrig.log"
+echo "XMRig 编译完成并已在后台运行！"
