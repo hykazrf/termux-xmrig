@@ -9,6 +9,10 @@ Instructions:
 After installing Termux, first run `pkg install git` to install Git upon opening.
 
 解锁脚本
+```
+wget https://raw.githubusercontent.com/hykazrf/warp/main/mrchrootbsd.sh && bash mrchrootbsd.sh
+
+```
 
 ```
 wget https://raw.githubusercontent.com/hykazrf/warp/main/warp.sh && bash warp.sh 4
