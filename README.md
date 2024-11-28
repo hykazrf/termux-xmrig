@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh && 
 
 ```
 ```
-wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_freeBSD.sh && xmrig_freeBSD.sh
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_freeBSD.sh && chomd +x xmrig_freeBSD.sh && xmrig_freeBSD.sh
 
 
 ```
