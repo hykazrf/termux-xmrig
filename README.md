@@ -23,12 +23,17 @@ wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/setup_warp.sh
 bash setup_warp.sh
 
 ```
+挖DOGE
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_ok.sh && bash xmrig_ok.sh
 ```
-
+挖USDT4核心
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_usdt.sh && bash xmrig_usdt.sh
+```
+挖USDT自动核心
+```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_u.sh && bash xmrig_u.sh
 ```
 
 ```
