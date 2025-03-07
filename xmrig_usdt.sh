@@ -27,7 +27,7 @@ cat <<'EOF' > start
 WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
 
 # 创建并启动一个新的 screen 会话，执行挖矿程序
-screen -dmS xmrig_mining ./xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider-us.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x -t 4 -x 192.252.209.158:4145
+screen -dmS xmrig_mining ./xmrig/build/xmrig -a gr -o stratum+ssl://ghostrider-us.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x -t 4
 
 # 输出通知
 echo "XMRig 挖矿已在后台运行，并且在 screen 会话中运行！"
