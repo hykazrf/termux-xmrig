@@ -39,6 +39,10 @@ web版挖USDT自动核心
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/0324.sh && bash 0324.sh
 ```
+web版挖USDT自动核心
+```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/03242.sh && bash 03242.sh
+```
 
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_freeBSD.sh && chomd +x xmrig_freeBSD.sh && xmrig_freeBSD.sh
