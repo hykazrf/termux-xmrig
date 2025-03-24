@@ -1,23 +1,15 @@
 #!/bin/bash
-
-# 更新系统和安装依赖
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y automake clang git vim cmake build-essential libssl-dev libuv1-dev screen
-
-# 克隆 XMRig 仓库
-git clone https://github.com/xmrig/xmrig
-cd xmrig
-
-# 创建构建目录并配置选项
-rm -rf build
-mkdir build && cd build
-cmake .. -DWITH_HWLOC=OFF
-
-# 编译 XMRig
-make -j$(nproc)
-
 # 返回主目录
 cd ~
+
+#下载程序
+wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
+
+#解压程序
+tar -xzf xmrig-6.22.2-linux-static-x64.tar.gz
+
+#去xmrig文件下
+cd xmrig-6.22.2
 
 # 创建快捷启动脚本
 cat <<'EOF' > start
