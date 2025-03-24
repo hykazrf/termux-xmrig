@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# 更新系统和安装依赖
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y screen
+
 # 返回主目录
 cd ~
 
