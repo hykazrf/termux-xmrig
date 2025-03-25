@@ -2,4 +2,4 @@
 # 生成随机矿工名
 WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
  
-./termux-xmrig/xmrig/build/xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x
+./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x
