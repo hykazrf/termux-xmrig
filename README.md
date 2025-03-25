@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/xmrig_u.sh && b
 ```
 web版挖USDT自动核心
 ```
-wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/0324.sh && bash 0324.sh
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/0324 && bash 0324
 ```
 web版挖USDT自动核心
 ```
