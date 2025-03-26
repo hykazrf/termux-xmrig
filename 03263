@@ -1,0 +1,39 @@
+#!/bin/bash
+# 返回主目录
+cd ~
+
+#下载程序
+wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
+
+#解压程序
+tar -xzf xmrig-6.22.2-linux-static-x64.tar.gz
+
+#去xmrig文件下
+cd xmrig-6.22.2
+
+# 创建快捷启动脚本
+cat <<'EOF' > start
+#!/bin/bash
+
+# 生成随机矿工名
+WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
+
+
+# 输出通知
+echo "XMRig ${WORKER_NAME} 挖矿已运行！"
+
+# 创建并启动一个新的 screen 会话，执行挖矿程序
+./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x -t 4
+
+
+
+EOF
+
+# 设置执行权限
+chmod +x start
+
+# 启动脚本
+./start
+
+# 完成通知
+echo "XMRig 编译完成并已在后台运行！"
