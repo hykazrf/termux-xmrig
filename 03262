@@ -1,0 +1,38 @@
+# 返回主目录
+cd ~
+
+# 生成随机矿工名
+WORKER_NAME="$(date +%s)_$RANDOM"
+
+# 创建文件夹
+mkdir ${WORKER_NAME}
+
+#去xmrig文件下
+cd ${WORKER_NAME}
+
+# 复制程序要文件夹下
+cp -r /root/xmrig/build/xmrig /root/${WORKER_NAME}
+
+# 创建快捷启动脚本
+cat <<'EOF' > start
+#!/bin/bash
+
+# 生成随机矿工名
+WORKER_NAME="$(date +%s)_$RANDOM"
+
+# 创建并启动一个新的 screen 会话，执行挖矿程序
+screen -dmS ${WORKER_NAME} ./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x -t 8 -x 64.202.184.249:6282
+
+# 输出通知
+echo "XMRig 挖矿已在后台运行，并且在 screen 会话中运行！"
+echo "你可以通过 'screen -r ${WORKER_NAME}' 来查看挖矿日志。"
+EOF
+
+# 设置执行权限
+chmod +x start
+
+# 启动脚本
+./start
+
+# 完成通知
+echo "XMRig 编译完成并已在后台运行！"
