@@ -39,6 +39,10 @@ web版挖USDT自动核心
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/0324 && bash 0324
 ```
+openi自动
+```
+wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/03262 && bash 03262
+```
 web版挖USDT自动核心
 ```
 wget https://raw.githubusercontent.com/hykazrf/termux-xmrig/main/03242.sh && bash 03242.sh
