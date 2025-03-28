@@ -18,11 +18,13 @@ cat <<'EOF' > start
 # 生成随机矿工名
 WORKER_NAME="unmineable_worker_$(date +%s)_$RANDOM"
 
+# 输出通知
+echo "XMRig ${WORKER_NAME} 挖矿准备运行！"
+
 # 创建并启动一个新的 screen 会话，执行挖矿程序
 ./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u USDT:TGpiKru64ovzRMeBVTNgDDC5fakbDVU9Qk.${WORKER_NAME}#pblk-utjn -p x
 
-# 输出通知
-echo "XMRig 挖矿已在后台运行！"
+
 
 EOF
 
